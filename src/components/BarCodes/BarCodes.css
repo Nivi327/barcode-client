@@ -1,0 +1,28 @@
+.App form {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 3rem;
+}
+
+.App form input {
+    border-radius: 6px;
+    height: 18px;
+    border: 1px solid gray;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.App form label {
+    font-size: 20px;
+}
+
+.App button {
+    font-size: 20px;
+    padding: 10px 20px;
+}
