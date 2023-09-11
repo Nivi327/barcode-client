@@ -67,14 +67,17 @@ const AllBarCodes = () => {
                 <tbody>
                     {
                         data.map((obj, idx) => {
-                            barcodeData = `Computer Number: ${obj.cno} \n Department: ${obj.dept} \n RAM: ${obj.ram} \n Processor: ${obj.pro}`
+                            barcodeData = `CNo:${obj.cno} Dept:${obj.dept}`
                             return <tr key={idx}>
                                 <th scope="row">{obj.id}</th>
                                 <td>{obj.cno}</td>
                                 <td>{obj.dept}</td>
                                 <td>{obj.ram}</td>
                                 <td>{obj.pro}</td>
-                                <td id={`svg-${obj.id}`}><Barcode value={barcodeData} displayValue={false} width={0.2} height={20} /></td>
+                                <td style={{
+                                    overflowX: 'scroll',
+                                    maxWidth: '20%',
+                                }} id={`svg-${obj.id}`}><Barcode value={barcodeData} displayValue={false} format='CODE128' height={30} /></td>
                                 <td><button onClick={downloadBarCode.bind(this, obj.id)}>Download</button></td>
                                 <td><button onClick={deleteData.bind(this, obj.id)}>Delete</button></td>
                             </tr>
